@@ -1,0 +1,51 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
+        <h2 class="text-center text-2xl font-semibold mb-4">Зареєструватись в FileGuard</h2>
+        <form (ngSubmit)="onRegister()" [formGroup]="registerForm" class="space-y-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <input type="text" pInputText formControlName="username" placeholder="Ім'я користувача"
+                    class="w-full field" styleClass="field" />
+            </div>
+            <small *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                class="text-red-500">
+                Ім'я користувача обов'язкове поле.
+            </small>
+
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-envelope"></i>
+                </span>
+                <input type="email" placeholder="Email" pInputText formControlName="email" styleClass="field" />
+            </div>
+            <small *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                class="text-red-500">
+                Введіть коректну емейл адресу.
+            </small>
+
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <p-password [toggleMask]="true" formControlName="password" styleClass="w-full rounded-r-lg password"
+                    class="" placeholder="Пароль" promptLabel="Виберіть пароль" weakLabel="Слабкий пароль"
+                    mediumLabel="Середня складність" strongLabel="Надійний пароль" />
+            </div>
+            <small *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                class="text-red-500">
+                Пароль є обов'язковим полем.
+            </small>
+
+            <button pButton type="submit" label="Зареєструватись" class="w-full"
+                [disabled]="registerForm.invalid"></button>
+        </form>
+
+        <div class="text-center mt-4">
+            <a [routerLink]="['/authenticate']" class="text-blue-500 hover:underline">
+                Вже маєте обліковий запис? Увійти ви можете тут 🔗.
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="h-full">
+    <ng-container *ngIf="(sharedByMe$ | async) as sharedByMe; else spinner">
+        <fg-file-table [files]="sharedByMe" pageRouterLink="/dashboard/shared-by-me"  [isDeleteVisible]="false" [isShareAccessVisible]="false" pageIcon="pi pi-user" pageName="Я поділився"></fg-file-table>
+    </ng-container>
+
+</div>
+
+<ng-template #spinner>
+    <div class="card flex items-center mt-12 justify-center">
+        <p-progressSpinner
+            styleClass="w-4rem h-4rem"
+            strokeWidth="4"
+            fill="var(--surface-ground)"
+            animationDuration=".5s" />
+    </div>
+</ng-template>

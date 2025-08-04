@@ -1,0 +1,14 @@
+<div id="dashboard-layout" class="flex w-full h-screen">
+    <div class="w-60 flex">
+        <fg-sidebar></fg-sidebar>
+    </div>
+
+    <div class="w-full px-6">
+        <div id="header" class="h-20">
+            <fg-header></fg-header>
+        </div>
+        <div id="dashboard-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<p-breadcrumb class="max-w-full" [model]="menuItems" [home]="topMenu">
+    <ng-template pTemplate="item" let-item>
+        <a class="cursor-pointer text-[#4b5563]" [routerLink]="item.url">
+            <i [class]="item.icon"></i>
+            <span class="ml-1">{{ item.label }}</span>
+        </a>
+    </ng-template>
+    <ng-template pTemplate="separator"> / </ng-template>
+</p-breadcrumb>

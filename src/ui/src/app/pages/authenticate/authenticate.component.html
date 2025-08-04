@@ -1,0 +1,38 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
+        <h2 class="text-center text-2xl font-semibold mb-4">Вхід в FileGuard</h2>
+        <form (ngSubmit)="onLogin()" [formGroup]="loginForm" class="space-y-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-envelope"></i>
+                </span>
+                <input type="text" pInputText formControlName="username" placeholder="Ім'я користувача" class="w-full field" />
+            </div>
+            <small *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+                class="text-red-500">
+                Введіть коректну емейл адресу.
+            </small>
+
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <p-password [toggleMask]="true" [feedback]="false" formControlName="password"
+                    styleClass="w-full rounded-r-lg password" class="" placeholder="Пароль" />
+            </div>
+            <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                class="text-red-500">
+                Пароль є обов'язковим
+            </small>
+
+            <button [loading]="isLoading" pButton type="submit" label="Увійти" class="w-full"
+                [disabled]="loginForm.invalid"></button>
+        </form>
+
+        <div class="text-center mt-4">
+            <a [routerLink]="['/registration']" class="text-blue-500 hover:underline">
+                Ще не маєте облікового запису? Зареєструватись тут 🔗.
+            </a>
+        </div>
+    </div>
+</div>

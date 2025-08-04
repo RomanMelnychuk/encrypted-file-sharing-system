@@ -1,0 +1,77 @@
+<div class="flex items-center pt-3 mb-3 w-full justify-between">
+    <!-- Search -->
+    <div class="w-2/3 relative">
+        <p-iconField class="w-full" iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input type="text" class="w-full" pInputText placeholder="Шукати папку або файли..."
+                [formControl]="searchControl" (input)="searchOverlay.show($event)" />
+        </p-iconField>
+        <p-overlayPanel #searchOverlay>
+            <div class="flex flex-column gap-3 min-w-[40rem] w-fit">
+                <div *ngIf="isLoading; else notLoading" class="flex justify-content-center">
+                    <i class="pi pi-spin pi-spinner"></i>
+                </div>
+
+                <ng-template #notLoading>
+                    <div *ngIf="searchResults?.files?.length === 0 && searchResults?.folders?.length === 0; else result"
+                        class="text-center text-gray-500">
+                        Нічого не знайдено.
+                    </div>
+                </ng-template>
+                <ng-template #result>
+                    <ul class="list-none p-0 max-h-96 overflow-y-auto w-full">
+                        <div *ngIf="searchResults.folders.length > 0">
+                            <p-tag [value]="'Знайдено папок - ' + searchResults.folders.length" />
+                            <li *ngFor="let folder of searchResults?.folders" class="my-2">
+                                <a pTooltip="Перейти в папку - '{{folder.name}}'" tooltipStyleClass="w-80"
+                                    (click)="navigateToFolder(folder)"
+                                    class="flex items-center p-2 text-gray-600 hover:text-blue-500 cursor-pointer">
+                                    <i class="mr-2 pi pi-folder"></i>
+                                    {{ folder.name }}
+                                </a>
+                            </li>
+                        </div>
+                        <p-divider />
+                        <div *ngIf="searchResults.files.length > 0">
+                            <p-tag [value]="'Знайдено файлів - ' + searchResults.files.length" />
+                            <li *ngFor="let file of searchResults?.files" class="my-2">
+                                <a pTooltip="При натисненні файл {{file.fileName}} буде завантажено на ваш комп'ютер"
+                                    tooltipStyleClass="w-80" (click)="downloadFile(file)"
+                                    class="flex items-center p-2 text-gray-600 hover:text-blue-500 cursor-pointer">
+                                    <i class="mr-2 {{getFileIcon(file)}}"></i>
+                                    {{ file.fileName }}
+                                </a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </ng-template>
+            </div>
+        </p-overlayPanel>
+    </div>
+    <!-- Account info -->
+    <div>
+        <p-button (onClick)="op.toggle($event)" icon="pi pi-angle-down" label="Персональна інформація" severity="help"
+            size="small" />
+        <p-overlayPanel #op>
+            <div class="flex flex-col gap-3 w-60">
+                <div class="w-full" *ngIf="(user$ | async) as user; else loading">
+                    <div class="w-full">
+                        <p-divider />
+                        <h1 class="font-bold">Привіт, {{user.userName}}!</h1>
+                        <p>{{user.email}}</p>
+                        <p-divider />
+                    </div>
+                    <p-button (onClick)="logout()" label="log out" severity="warning" icon="pi pi-sign-out"
+                        styleClass="w-full" size="small" />
+                </div>
+                <ng-template #loading>
+                    <p-skeleton width="15rem" height="2rem" styleClass="mb-2" />
+                    <p-skeleton height="2rem" />
+                </ng-template>
+
+            </div>
+        </p-overlayPanel>
+
+    </div>
+</div>

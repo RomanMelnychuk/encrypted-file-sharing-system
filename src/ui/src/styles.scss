@@ -1,0 +1,105 @@
+@import "primeicons/primeicons.css";
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.p-dialog-header {
+    padding-bottom: 0 !important;
+}
+
+.p-fileupload-buttonbar {
+    .p-button {
+        padding: 0.3rem 0.5rem !important;
+    }
+}
+
+.p-fileupload .p-fileupload-row > div {
+    padding: 0.3rem;
+
+    .p-button {
+        padding: 0.3rem;
+    }
+}
+
+.password {
+    input {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+}
+
+.field {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    input {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}
+
+.p-multiselect-filter-container {
+    .p-inputtext{
+        padding: 0.3rem;
+    }
+}
+
+.p-multiselect-label-container{
+
+}
+
+.active-menu-item {
+    color: #007ad9;
+    font-weight: bold;
+    background: #007bd931;
+    border-radius: 5px;
+}
+
+.active-menu-item i {
+    color: #007ad9;
+}
+
+.sidebar-message .p-message-wrapper{
+    padding: 0.2rem 0.8rem;
+    font-size: 14px;
+}
+
+.p-breadcrumb {
+    padding: 0.3rem;
+}
+
+.p-menuitem-icon {
+    margin-right: 4px ;
+}
+
+::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 3px solid #fff;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}

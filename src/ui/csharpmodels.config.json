@@ -1,0 +1,16 @@
+{
+    "include": [
+        "../services/FileGuard.Identity.Application/DTOs/*",
+        "../services/FileGuard.API/Models/*"
+    ],
+    "exclude": [],
+    "output": "./src/app/core/models/api-models.ts",
+    "camelCase": true,
+    "camelCaseEnums": true,
+    "numericEnums": false,
+    "stringLiteralTypesInsteadOfEnums": false,
+    "customTypeTranslations": {
+        "ProductName": "string",
+        "ProductNumber": "string"
+    }
+}

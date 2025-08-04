@@ -1,0 +1,8 @@
+<div class="w-80 mt-3">
+    <p>Ви справді хочете видалити {{itemType === 'file' ? 'файл' : 'папку' }} {{itemName}} ?</p>
+    <!-- Action Buttons -->
+    <div class="flex justify-end">
+        <p-button type="button" size="small" label="Відміна" severity="info" (onClick)="cancel()"/>
+        <p-button type="button" size="small" [loading]="isLoading" label="Видалити" severity="danger" class="ml-2" (onClick)="submit()"/>
+    </div>
+</div>
