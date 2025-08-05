@@ -16,9 +16,28 @@ A secure web platform for uploading, encrypting, storing, and sharing files betw
 
 ---
 
-## 📸 Feature Demonstration
+## 🧰 Technologies Used
 
-This section demonstrates the core user experience on the platform: registration, login, file upload, folder creation, secure sharing, and encryption details.
+### 📦 Frontend
+- **Angular 18** — modern SPA framework with component-based architecture and routing
+- **NgRx** — centralized state management using Redux pattern
+- **RxJS** — reactive programming with observable streams
+- **TailwindCSS** — utility-first CSS framework for fast and responsive UI styling
+- **PrimeNG** — rich UI component library for Angular
+
+### 🖥 Backend
+- **ASP.NET Core 8** — high-performance framework for building RESTful APIs
+- **Entity Framework Core 8** — ORM for working with relational databases
+- **MSSQL Server** — relational database used to store metadata and user data
+
+### 🔐 Cryptography & Security
+- **AES (Advanced Encryption Standard)** — symmetric encryption of files
+- **RSA** — asymmetric encryption of AES keys and IVs
+- **SHA-256** — data integrity verification
+
+---
+
+## 📸 Feature Demonstration
 
 ### 1. 🔐 User Registration
 
@@ -40,7 +59,7 @@ Users log in with their credentials. The platform returns a JWT token, which is 
 
 ### 3. ☁️ File Upload and Encryption
 
-Users can upload files from the **"My Files"** page. Files are automatically encrypted using AES. The AES key and IV are encrypted using the user's RSA public key before being stored securely.
+Files uploaded from the **"My Files"** page are automatically encrypted using AES. The AES key and IV are encrypted with the user's RSA public key and stored securely.
 
 ![My Files Page](./assets/images/my-files.jpeg)  
 *Main view of uploaded files*
@@ -58,7 +77,7 @@ Users can upload files from the **"My Files"** page. Files are automatically enc
 
 ### 4. 🤝 File Sharing
 
-Users can share files with other users by entering their email or login. Shared files appear in the **"Files Shared With Me"** section, while files the user has shared appear in the **"Shared Files"** section.
+Users can share files with others by entering their email or login. Shared files appear in the **"Files Shared With Me"** section. Files the user has shared appear in the **"Shared Files"** section.
 
 ---
 
@@ -66,20 +85,27 @@ Users can share files with other users by entering their email or login. Shared 
 
 [![Watch the video](./assets/images/video-placeholder.jpeg)](https://youtu.be/G6BO-GAtm4I?si=FOM3L9bMkk4ILy_3)
 
+---
+
+## 🚀 Getting Started
+
 ### Start Backend
 ```bash
 cd src/services
 dotnet run
 ```
+
 ### Start Frontend
 ```bash
 cd src/ui
 npm install
 npm start
 ```
+
+---
+
 ## 👨‍💻 Author
 
 **Roman Melnychuk**  
-📧 Email: roma.melnychuk2013@gmail.com
+📧 Email: roma.melnychuk2013@gmail.com  
 [My Telegram](https://t.me/roman_melnychuk17)
-
