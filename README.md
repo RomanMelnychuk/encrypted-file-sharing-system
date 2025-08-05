@@ -81,5 +81,5 @@ npm start
 
 **Roman Melnychuk**  
 📧 Email: roma.melnychuk2013@gmail.com
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](@roman_melnychuk17)
+[My Telegram](https://t.me/roman_melnychuk17)
 
