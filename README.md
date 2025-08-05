@@ -64,4 +64,16 @@ Users can share files with other users by entering their email or login. Shared 
 
 ## 🎬 Video Demo
 
-[![Watch the video](./assets/images/video-placeholder.jpeg)](https://example.com/demo-video)
+[![Watch the video](./assets/images/video-placeholder.jpeg)](https://youtu.be/G6BO-GAtm4I?si=FOM3L9bMkk4ILy_3)
+
+### Start Backend
+```bash
+cd Messenger.Backend
+dotnet run
+
+
+### Start Frontend
+
+cd frontend
+npm install
+npm start
