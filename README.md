@@ -9,7 +9,7 @@ A secure web platform for uploading, encrypting, storing, and sharing files betw
 - 📝 User registration with validation (email format, unique login, password strength)
 - 🔐 JWT-based user authentication (Bearer Token)
 - 📤 Uploading and encrypting files using AES
-- 🔑 AES key & IV encrypted using RSA public key
+- 🔑 AES key and IV are encrypted using the user's RSA public key
 - 📁 Folder creation and management
 - 👥 Share files with other users via email or login
 - ✅ Data integrity verification
@@ -19,6 +19,7 @@ A secure web platform for uploading, encrypting, storing, and sharing files betw
 ## 🧰 Technologies Used
 
 ### 📦 Frontend
+
 - **Angular 18** — modern SPA framework with component-based architecture and routing
 - **NgRx** — centralized state management using Redux pattern
 - **RxJS** — reactive programming with observable streams
@@ -26,11 +27,13 @@ A secure web platform for uploading, encrypting, storing, and sharing files betw
 - **PrimeNG** — rich UI component library for Angular
 
 ### 🖥 Backend
+
 - **ASP.NET Core 8** — high-performance framework for building RESTful APIs
 - **Entity Framework Core 8** — ORM for working with relational databases
 - **MSSQL Server** — relational database used to store metadata and user data
 
 ### 🔐 Cryptography & Security
+
 - **AES (Advanced Encryption Standard)** — symmetric encryption of files
 - **RSA** — asymmetric encryption of AES keys and IVs
 - **SHA-256** — data integrity verification
@@ -90,12 +93,14 @@ Users can share files with others by entering their email or login. Shared files
 ## 🚀 Getting Started
 
 ### Start Backend
+
 ```bash
 cd src/services
 dotnet run
 ```
 
 ### Start Frontend
+
 ```bash
 cd src/ui
 npm install
@@ -108,4 +113,4 @@ npm start
 
 **Roman Melnychuk**  
 📧 Email: roma.melnychuk2013@gmail.com  
-[My Telegram](https://t.me/roman_melnychuk17)
+[Telegram](https://t.me/roman_melnychuk17)
