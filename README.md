@@ -68,12 +68,18 @@ Users can share files with other users by entering their email or login. Shared 
 
 ### Start Backend
 ```bash
-cd Messenger.Backend
+cd src/services
 dotnet run
-
-
+```
 ### Start Frontend
-
-cd frontend
+```bash
+cd src/ui
 npm install
 npm start
+```
+## 👨‍💻 Author
+
+**Roman Melnychuk**  
+📧 Email: roma.melnychuk2013@gmail.com
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](@roman_melnychuk17)
+
